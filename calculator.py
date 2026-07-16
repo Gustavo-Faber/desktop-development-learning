@@ -24,4 +24,10 @@ class Application():
         self.et_user = Entry(self.scr_login)
         self.et_user.place(relwidth=0.8, relheight=0.1, relx=0.1, rely=0.12)
 
+        self.lb_password = Label(self.scr_login, bg=self.FUNDO, text="Password", fg="white")
+        self.lb_password.place(relx=0.5, rely=0.25, anchor="center")
+
+        self.et_password = Entry(self.scr_login)
+        self.et_password.place(relwidth=0.8, relheight=0.1, relx=0.1, rely=0.27)
+
 Application()
