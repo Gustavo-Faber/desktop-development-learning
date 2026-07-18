@@ -30,4 +30,7 @@ class Application():
         self.et_password = Entry(self.scr_login, font=("Arial", 15), bg="gray", fg="white")
         self.et_password.place(relwidth=0.8, relheight=0.1, relx=0.1, rely=0.53)
 
+        self.bt_login = Button(self.scr_login, text="LOGIN", bg="blue", font=("arial", 15), fg="white")
+        self.bt_login.place(relx=0.5, rely=0.7, relwidth=0.5, relheight=0.07, anchor="center")
+
 Application()
