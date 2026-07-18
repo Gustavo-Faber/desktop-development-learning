@@ -15,19 +15,19 @@ class Application():
     def screen_login(self):
         self.scr_login = Frame(self.window, bg=self.FUNDO).pack(fill="both", expand=True)
 
-        self.lb_login = Label(self.scr_login, bg=self.FUNDO, text="LOGIN", fg="white", font=("Arial", 25))
-        self.lb_login.place(relx=0.5, rely=0.05, anchor="center")
+        self.lb_login = Label(self.scr_login, bg=self.FUNDO, text="Login", fg="white", font=("Arial", 25))
+        self.lb_login.place(relx=0.5, rely=0.2, anchor="center")
 
         self.lb_user = Label(self.scr_login, bg=self.FUNDO, text="User", fg="white")
-        self.lb_user.place(relx=0.5, rely=0.1, anchor="center")
+        self.lb_user.place(relx=0.5, rely=0.3, anchor="center")
 
-        self.et_user = Entry(self.scr_login, font=("Arial", 15))
-        self.et_user.place(relwidth=0.8, relheight=0.1, relx=0.1, rely=0.12)
+        self.et_user = Entry(self.scr_login, font=("Arial", 15), bg="gray", fg="white")
+        self.et_user.place(relwidth=0.8, relheight=0.1, relx=0.1, rely=0.33)
 
         self.lb_password = Label(self.scr_login, bg=self.FUNDO, text="Password", fg="white")
-        self.lb_password.place(relx=0.5, rely=0.25, anchor="center")
+        self.lb_password.place(relx=0.5, rely=0.5, anchor="center")
 
-        self.et_password = Entry(self.scr_login, font=("Arial", 15))
-        self.et_password.place(relwidth=0.8, relheight=0.1, relx=0.1, rely=0.27)
+        self.et_password = Entry(self.scr_login, font=("Arial", 15), bg="gray", fg="white")
+        self.et_password.place(relwidth=0.8, relheight=0.1, relx=0.1, rely=0.53)
 
 Application()
