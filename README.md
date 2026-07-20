@@ -9,7 +9,7 @@ Calculadora desktop com tela de login funcional.
 
 **Funcionalidades:**
 - Tela de login com autenticação de usuário e senha
-- Interface com tema escuro
+- Recursos de acessibilidade
 - Calculadora com operações básicas
 
 **Tecnologias:** Python, Tkinter, SQLite3
@@ -31,7 +31,7 @@ cd desktop-development-learning
 python calculator.py
 ```
 
-> Nenhuma dependência externa — Tkinter e SQLite3 já vêm embutidos no Python.
+> Nenhuma dependência externa pois Tkinter e SQLite3 já vêm embutidos no Python.
 
 ---
 
@@ -42,11 +42,3 @@ python calculator.py
 - Integração com banco de dados SQLite3
 - Navegação entre telas (frames)
 - Boas práticas de organização de projetos
-
----
-
-## 👨‍💻 Autor
-
-**Gustavo Faber** — Estudante de Ciência da Computação
-
-[![GitHub](https://img.shields.io/badge/GitHub-Gustavo--Faber-181717?style=flat&logo=github)](https://github.com/Gustavo-Faber)
