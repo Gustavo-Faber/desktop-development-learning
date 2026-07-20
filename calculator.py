@@ -1,8 +1,17 @@
 from tkinter import *
 
+contas = [["Gustavo", "1234"]]
+
 class Feats():
     def feat_btlogin(self):
-        self.user = 
+        self.user = self.et_user.get()
+        self.password = self.et_password.get()
+        if [self.user, self.password] in contas:
+            self.scr_login.forget()
+            self.scr_main.pack(fill="both", expand=True)
+        else:
+            self.error_login.place(relx=0.5, rely=0.8, anchor="center")
+
 
 class Application(Feats):
     def __init__(self):
@@ -13,11 +22,13 @@ class Application(Feats):
         self.FUNDO = "#3B3B3B"
         self.window.configure(bg=self.FUNDO)
         self.screen_login()
+        self.screen_main()
 
         self.window.mainloop()
 
     def screen_login(self):
-        self.scr_login = Frame(self.window, bg=self.FUNDO).pack(fill="both", expand=True)
+        self.scr_login = Frame(self.window, bg=self.FUNDO)
+        self.scr_login.pack(fill="both", expand=True)
 
         self.lb_login = Label(self.scr_login, bg=self.FUNDO, text="Login", fg="white", font=("Arial", 25))
         self.lb_login.place(relx=0.5, rely=0.2, anchor="center")
@@ -34,7 +45,14 @@ class Application(Feats):
         self.et_password = Entry(self.scr_login, font=("Arial", 15), bg="gray", fg="white")
         self.et_password.place(relwidth=0.8, relheight=0.1, relx=0.1, rely=0.53)
 
-        self.bt_login = Button(self.scr_login, text="LOGIN", bg="blue", font=("arial", 15), fg="white")
+        self.bt_login = Button(self.scr_login, text="LOGIN", bg="blue", font=("arial", 15), fg="white", command=self.feat_btlogin)
         self.bt_login.place(relx=0.5, rely=0.7, relwidth=0.5, relheight=0.07, anchor="center")
+
+        self.error_login = Label(self.scr_login, bg=self.FUNDO, text="Senha e/ou usuário incorretos!.", fg="red", font=("arial", 10))
+
+    def screen_main(self):
+        self.scr_main = Frame(self.window, bg=self.FUNDO)
+
+
 
 Application()
