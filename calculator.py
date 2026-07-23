@@ -1,6 +1,6 @@
 from tkinter import *
 
-contas = [["Gustavo", "1234"]]
+contas = [["gustavo", "1234"]]
 
 class Feats():
     def feat_btlogin(self):
@@ -52,6 +52,9 @@ class Application(Feats):
 
     def screen_main(self):
         self.scr_main = Frame(self.window, bg=self.FUNDO)
+
+        self.visor = Label(self.scr_main, bg="lightgray", text="")
+        self.visor.place(relwidth=0.9, relheight=0.1, relx=0.5, rely=0.2, anchor="center")
 
 
 
