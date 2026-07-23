@@ -12,6 +12,9 @@ class Feats():
         else:
             self.error_login.place(relx=0.5, rely=0.8, anchor="center")
 
+    def clique(self, text):
+        self.visor["text"] += text
+
 
 class Application(Feats):
     def __init__(self):
@@ -54,7 +57,37 @@ class Application(Feats):
         self.scr_main = Frame(self.window, bg=self.FUNDO)
 
         self.visor = Label(self.scr_main, bg="lightgray", text="")
-        self.visor.place(relwidth=0.9, relheight=0.1, relx=0.5, rely=0.2, anchor="center")
+        self.visor.place(relwidth=0.9, relheight=0.1, relx=0.5, rely=0.15, anchor="center")
+
+        self.seven = Button(self.scr_main, text="7", bg="lightgray", command=lambda: self.clique("7"))
+        self.seven.place(relx= 0.05, rely= 0.2, relwidth= 0.2, relheight= 0.1)
+
+        self.eight = Button(self.scr_main, text="8", bg="lightgray", command=lambda: self.clique("8"))
+        self.eight.place(relx= 0.25, rely= 0.2, relwidth= 0.2, relheight= 0.1)
+
+        self.nine = Button(self.scr_main, text="9", bg="lightgray", command=lambda: self.clique("9"))
+        self.nine.place(relx= 0.45, rely= 0.2, relwidth= 0.2, relheight= 0.1)
+
+        self.four = Button(self.scr_main, text="4", bg="lightgray", command=lambda: self.clique("4"))
+        self.four.place(relx= 0.05, rely= 0.3, relwidth= 0.2, relheight= 0.1)
+
+        self.five = Button(self.scr_main, text="5", bg="lightgray", command=lambda: self.clique("5"))
+        self.five.place(relx= 0.25, rely= 0.3, relwidth= 0.2, relheight= 0.1)
+
+        self.six = Button(self.scr_main, text="6", bg="lightgray", command=lambda: self.clique("6"))
+        self.six.place(relx= 0.45, rely= 0.3, relwidth= 0.2, relheight= 0.1)
+
+        self.one = Button(self.scr_main, text="1", bg="lightgray", command=lambda: self.clique("1"))
+        self.one.place(relx= 0.05, rely= 0.4, relwidth= 0.2, relheight= 0.1)
+
+        self.two = Button(self.scr_main, text="2", bg="lightgray", command=lambda: self.clique("2"))
+        self.two.place(relx= 0.25, rely= 0.4, relwidth= 0.2, relheight= 0.1)
+
+        self.three = Button(self.scr_main, text="3", bg="lightgray", command=lambda: self.clique("3"))
+        self.three.place(relx= 0.45, rely= 0.4, relwidth= 0.2, relheight= 0.1)
+
+        self.soma = Button(self.scr_main, text="+", bg="lightgray", command=lambda: self.clique("+"))
+        self.soma.place(relx= 0.65, rely= 0.4, relwidth= 0.2, relheight= 0.1)
 
 
 
