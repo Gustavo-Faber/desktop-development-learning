@@ -87,7 +87,16 @@ class Application(Feats):
         self.three.place(relx= 0.45, rely= 0.4, relwidth= 0.2, relheight= 0.1)
 
         self.soma = Button(self.scr_main, text="+", bg="lightgray", command=lambda: self.clique("+"))
-        self.soma.place(relx= 0.65, rely= 0.4, relwidth= 0.2, relheight= 0.1)
+        self.soma.place(relx= 0.65, rely= 0.5, relwidth= 0.2, relheight= 0.1)
+
+        self.divisao = Button(self.scr_main, text="/", bg="lightgray", command=lambda: self.clique("/"))
+        self.divisao.place(relx= 0.65, rely= 0.2, relwidth= 0.2, relheight= 0.1)
+
+        self.subtracao = Button(self.scr_main, text="-", bg="lightgray", command=lambda: self.clique("-"))
+        self.subtracao.place(relx= 0.65, rely= 0.4, relwidth= 0.2, relheight= 0.1)
+
+        self.produto = Button(self.scr_main, text="x", bg="lightgray", command=lambda: self.clique("x"))
+        self.produto.place(relx= 0.65, rely= 0.3, relwidth= 0.2, relheight= 0.1)
 
 
 
