@@ -13,7 +13,10 @@ class Feats():
             self.error_login.place(relx=0.5, rely=0.8, anchor="center")
 
     def clique(self, text):
-        self.visor["text"] += text
+        self.operadores = ["+", "-", "x", "/"]
+        self.textvisor = self.visor["text"]
+        if not (self.textvisor[-1] in self.operadores and text in self.operadores):
+            self.visor["text"] += text
 
 
 class Application(Feats):
@@ -56,7 +59,7 @@ class Application(Feats):
     def screen_main(self):
         self.scr_main = Frame(self.window, bg=self.FUNDO)
 
-        self.visor = Label(self.scr_main, bg="lightgray", text="")
+        self.visor = Label(self.scr_main, bg="lightgray", text=" ")
         self.visor.place(relwidth=0.9, relheight=0.1, relx=0.5, rely=0.15, anchor="center")
 
         self.seven = Button(self.scr_main, text="7", bg="lightgray", command=lambda: self.clique("7"))
@@ -97,6 +100,9 @@ class Application(Feats):
 
         self.produto = Button(self.scr_main, text="x", bg="lightgray", command=lambda: self.clique("x"))
         self.produto.place(relx= 0.65, rely= 0.3, relwidth= 0.2, relheight= 0.1)
+
+        self.resolver = Button(self.scr_main, text="=", bg="lightgray")
+        self.resolver.place(relx= 0.65, rely= 0.6, relwidth= 0.2, relheight= 0.1)
 
 
 
