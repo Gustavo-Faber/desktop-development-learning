@@ -15,8 +15,12 @@ class Feats():
     def clique(self, text):
         self.operadores = ["+", "-", "x", "/"]
         self.textvisor = self.visor["text"]
-        if not (self.textvisor[-1] in self.operadores and text in self.operadores):
+
+        if text == "Del":
+            self.visor["text"] = self.visor["text"][:-1]
+        elif not (self.textvisor[-1] in self.operadores and text in self.operadores):
             self.visor["text"] += text
+        else:
 
 
 class Application(Feats):
@@ -90,19 +94,22 @@ class Application(Feats):
         self.three.place(relx= 0.45, rely= 0.4, relwidth= 0.2, relheight= 0.1)
 
         self.soma = Button(self.scr_main, text="+", bg="lightgray", command=lambda: self.clique("+"))
-        self.soma.place(relx= 0.65, rely= 0.5, relwidth= 0.2, relheight= 0.1)
+        self.soma.place(relx= 0.65, rely= 0.6, relwidth= 0.2, relheight= 0.1)
 
         self.divisao = Button(self.scr_main, text="/", bg="lightgray", command=lambda: self.clique("/"))
-        self.divisao.place(relx= 0.65, rely= 0.2, relwidth= 0.2, relheight= 0.1)
+        self.divisao.place(relx= 0.65, rely= 0.3, relwidth= 0.2, relheight= 0.1)
 
         self.subtracao = Button(self.scr_main, text="-", bg="lightgray", command=lambda: self.clique("-"))
-        self.subtracao.place(relx= 0.65, rely= 0.4, relwidth= 0.2, relheight= 0.1)
+        self.subtracao.place(relx= 0.65, rely= 0.5, relwidth= 0.2, relheight= 0.1)
 
         self.produto = Button(self.scr_main, text="x", bg="lightgray", command=lambda: self.clique("x"))
-        self.produto.place(relx= 0.65, rely= 0.3, relwidth= 0.2, relheight= 0.1)
+        self.produto.place(relx= 0.65, rely= 0.4, relwidth= 0.2, relheight= 0.1)
 
         self.resolver = Button(self.scr_main, text="=", bg="lightgray")
-        self.resolver.place(relx= 0.65, rely= 0.6, relwidth= 0.2, relheight= 0.1)
+        self.resolver.place(relx= 0.65, rely= 0.7, relwidth= 0.2, relheight= 0.1)
+
+        self.delete = Button(self.scr_main, text="Del", bg="lightgray", command=lambda: self.clique("Del"))
+        self.delete.place(relx= 0.65, rely= 0.2, relwidth= 0.2, relheight= 0.1)
 
 
 
