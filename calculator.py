@@ -16,11 +16,18 @@ class Feats():
         self.operadores = ["+", "-", "x", "/"]
         self.textvisor = self.visor["text"]
 
-        if text == "Del":
+        if text == "=":
+             self.visor["text"] = str(eval(self.visor["text"]))
+        elif text == "Del":
+            if self.visor["text"] == " ":
+                return
             self.visor["text"] = self.visor["text"][:-1]
+        elif self.visor == " " and text in self.operadores:
+            return
         elif not (self.textvisor[-1] in self.operadores and text in self.operadores):
             self.visor["text"] += text
         else:
+            return
 
 
 class Application(Feats):
@@ -105,7 +112,7 @@ class Application(Feats):
         self.produto = Button(self.scr_main, text="x", bg="lightgray", command=lambda: self.clique("x"))
         self.produto.place(relx= 0.65, rely= 0.4, relwidth= 0.2, relheight= 0.1)
 
-        self.resolver = Button(self.scr_main, text="=", bg="lightgray")
+        self.resolver = Button(self.scr_main, text="=", bg="lightgray", command=lambda: self.clique("="))
         self.resolver.place(relx= 0.65, rely= 0.7, relwidth= 0.2, relheight= 0.1)
 
         self.delete = Button(self.scr_main, text="Del", bg="lightgray", command=lambda: self.clique("Del"))
