@@ -72,59 +72,59 @@ class Application(Feats):
     def screen_main(self):
         self.scr_main = Frame(self.window, bg=self.FUNDO)
 
-        self.visor = Label(self.scr_main, bg="lightgray", text=" ")
-        self.visor.place(relwidth=0.9, relheight=0.1, relx=0.5, rely=0.15, anchor="center")
+        self.visor = Label(self.scr_main, bg="lightgray", text=" ", font=("Arial", 20))
+        self.visor.place(relwidth=1, relheight=0.1, relx=0.5, rely=0.15, anchor="center")
 
         self.seven = Button(self.scr_main, text="7", bg="lightgray", command=lambda: self.clique("7"))
-        self.seven.place(relx= 0.05, rely= 0.3, relwidth= 0.2, relheight= 0.1)
+        self.seven.place(relx= 0.0, rely= 0.3, relwidth= 0.25, relheight= 0.1)
 
         self.eight = Button(self.scr_main, text="8", bg="lightgray", command=lambda: self.clique("8"))
-        self.eight.place(relx= 0.25, rely= 0.3, relwidth= 0.2, relheight= 0.1)
+        self.eight.place(relx= 0.25, rely= 0.3, relwidth= 0.25, relheight= 0.1)
 
         self.nine = Button(self.scr_main, text="9", bg="lightgray", command=lambda: self.clique("9"))
-        self.nine.place(relx= 0.45, rely= 0.3, relwidth= 0.2, relheight= 0.1)
+        self.nine.place(relx= 0.50, rely= 0.3, relwidth= 0.25, relheight= 0.1)
 
         self.four = Button(self.scr_main, text="4", bg="lightgray", command=lambda: self.clique("4"))
-        self.four.place(relx= 0.05, rely= 0.4, relwidth= 0.2, relheight= 0.1)
+        self.four.place(relx= 0.0, rely= 0.4, relwidth= 0.25, relheight= 0.1)
 
         self.five = Button(self.scr_main, text="5", bg="lightgray", command=lambda: self.clique("5"))
-        self.five.place(relx= 0.25, rely= 0.4, relwidth= 0.2, relheight= 0.1)
+        self.five.place(relx= 0.25, rely= 0.4, relwidth= 0.25, relheight= 0.1)
 
         self.six = Button(self.scr_main, text="6", bg="lightgray", command=lambda: self.clique("6"))
-        self.six.place(relx= 0.45, rely= 0.4, relwidth= 0.2, relheight= 0.1)
+        self.six.place(relx= 0.50, rely= 0.4, relwidth= 0.25, relheight= 0.1)
 
         self.one = Button(self.scr_main, text="1", bg="lightgray", command=lambda: self.clique("1"))
-        self.one.place(relx= 0.05, rely= 0.5, relwidth= 0.2, relheight= 0.1)
+        self.one.place(relx= 0.0, rely= 0.5, relwidth= 0.25, relheight= 0.1)
 
         self.two = Button(self.scr_main, text="2", bg="lightgray", command=lambda: self.clique("2"))
-        self.two.place(relx= 0.25, rely= 0.5, relwidth= 0.2, relheight= 0.1)
+        self.two.place(relx= 0.25, rely= 0.5, relwidth= 0.25, relheight= 0.1)
 
         self.three = Button(self.scr_main, text="3", bg="lightgray", command=lambda: self.clique("3"))
-        self.three.place(relx= 0.45, rely= 0.5, relwidth= 0.2, relheight= 0.1)
+        self.three.place(relx= 0.50, rely= 0.5, relwidth= 0.25, relheight= 0.1)
 
         self.zero = Button(self.scr_main, text="0", bg="lightgray", command=lambda: self.clique("0"))
-        self.zero.place(relx= 0.25, rely= 0.6, relwidth= 0.2, relheight= 0.1)
+        self.zero.place(relx= 0.25, rely= 0.6, relwidth= 0.25, relheight= 0.1)
 
         self.soma = Button(self.scr_main, text="+", bg="lightgray", command=lambda: self.clique("+"))
-        self.soma.place(relx= 0.65, rely= 0.5, relwidth= 0.2, relheight= 0.1)
+        self.soma.place(relx= 0.75, rely= 0.5, relwidth= 0.25, relheight= 0.1)
 
         self.divisao = Button(self.scr_main, text="/", bg="lightgray", command=lambda: self.clique("/"))
-        self.divisao.place(relx= 0.65, rely= 0.2, relwidth= 0.2, relheight= 0.1)
+        self.divisao.place(relx= 0.75, rely= 0.2, relwidth= 0.25, relheight= 0.1)
 
         self.subtracao = Button(self.scr_main, text="-", bg="lightgray", command=lambda: self.clique("-"))
-        self.subtracao.place(relx= 0.65, rely= 0.4, relwidth= 0.2, relheight= 0.1)
+        self.subtracao.place(relx= 0.75, rely= 0.4, relwidth= 0.25, relheight= 0.1)
 
         self.produto = Button(self.scr_main, text="x", bg="lightgray", command=lambda: self.clique("*"))
-        self.produto.place(relx= 0.65, rely= 0.3, relwidth= 0.2, relheight= 0.1)
+        self.produto.place(relx= 0.75, rely= 0.3, relwidth= 0.25, relheight= 0.1)
 
         self.resolver = Button(self.scr_main, text="=", bg="lightgray", command=lambda: self.clique("="))
-        self.resolver.place(relx= 0.65, rely= 0.6, relwidth= 0.2, relheight= 0.1)
+        self.resolver.place(relx= 0.75, rely= 0.6, relwidth= 0.25, relheight= 0.1)
 
         self.delete = Button(self.scr_main, text="C", bg="lightgray", command=lambda: self.clique("C"))
-        self.delete.place(relx= 0.05, rely= 0.2, relwidth= 0.2, relheight= 0.1)
+        self.delete.place(relx= 0.0, rely= 0.2, relwidth= 0.25, relheight= 0.1)
 
         self.delall = Button(self.scr_main, text="AC", bg="lightgray", command=lambda: self.clique("AC"))
-        self.delall.place(relx= 0.45, rely= 0.6, relwidth= 0.2, relheight= 0.1)
+        self.delall.place(relx= 0.50, rely= 0.6, relwidth= 0.25, relheight= 0.1)
 
 
 
