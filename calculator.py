@@ -1,4 +1,5 @@
 from tkinter import *
+import sqlite3
 
 contas = [["gustavo", "1234"]]
 
