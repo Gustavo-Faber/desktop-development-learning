@@ -1,17 +1,19 @@
 from tkinter import *
 import sqlite3
 
-contas = [["gustavo", "1234"]]
-
 class Feats():
     def feat_btlogin(self):
+        self.conecta_bd()
         self.user = self.et_user.get()
         self.password = self.et_password.get()
-        if [self.user, self.password] in contas:
+        self.cursor.execute("""SELECT * FROM users""")
+        self.contas = self.cursor.fetchall()
+        if any(self.user == conta[1] and self.password == conta[2] for conta in self.contas):
             self.scr_login.forget()
             self.scr_main.pack(fill="both", expand=True)
         else:
             self.error_login.place(relx=0.5, rely=0.8, anchor="center")
+        self.desconecta_bd()
     def clique(self, text):
         self.operadores = ["+", "-", "x", "/"]
         self.textvisor = self.visor["text"]
@@ -33,15 +35,23 @@ class Feats():
     def conecta_bd(self):
         self.conn = sqlite3.connect("banco.db")
         self.cursor = self.conn.cursor(); print("Conectando ao banco de dados")
-
+    def desconecta_bd(self):
+        self.conn.close(); print("Desconectando do banco de dados")
     def monta_tabelas(self):
-        self.cursor.execute("""CREATE TABLE IF NOT EXISTS users (
+        self.conecta_bd()
+        self.cursor.execute("""
+            CREATE TABLE IF NOT EXISTS users (
             id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-            user TEXT NOT NULL,
+            user TEXT NOT NULL UNIQUE,
             pass TEXT NOT NULL
             )""")
+
+        self.cursor.execute("""
+        INSERT OR IGNORE INTO users (user, pass)
+        VALUES ('admin', '1234')
+        """)
         self.conn.commit(); print("Banco de dados criado")
-        
+        self.desconecta_bd()
 
 class Application(Feats):
     def __init__(self):
@@ -52,6 +62,7 @@ class Application(Feats):
         self.FUNDO = "#242424"
         self.FUNDOB = "#3B3B3B"
         self.window.configure(bg=self.FUNDO)
+        self.monta_tabelas()
         self.screen_login()
         self.screen_main()
 
