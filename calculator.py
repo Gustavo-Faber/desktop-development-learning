@@ -52,6 +52,11 @@ class Feats():
         """)
         self.conn.commit(); print("Banco de dados criado")
         self.desconecta_bd()
+    def switch_mode(self):
+        if self.mode == self.white():
+            self.mode = self.black_mode()
+        else:
+            self.mode = self.white_mode()
 
 class Application(Feats):
     def __init__(self):
@@ -59,7 +64,7 @@ class Application(Feats):
         self.window.title("Calculator")
         self.window.geometry("350x550")
         self.window.minsize(width=350, height=550)
-        self.modo = self.bl_mode()
+        self.mode = self.white_mode()
         self.window.configure(bg=self.FUNDO)
         self.monta_tabelas()
         self.screen_login()
@@ -148,18 +153,18 @@ class Application(Feats):
         self.delall = Button(self.scr_main, text="AC", bg=self.FUNDOB, fg=self.FUNDOL, font=("Arial", 15), command=lambda: self.clique("AC"))
         self.delall.place(relx= 0.50, rely= 0.6, relwidth= 0.25, relheight= 0.1)
 
-        self.modo = Button(self.window, text="🌙", bg=self.FUNDOB)
+        self.modo = Button(self.window, text="🌙", bg=self.FUNDOB, command=self.switch_mode)
         self.modo.place(relx=0, rely=0, relwidth=0.25, relheight=0.1)
 
 
-    def wh_mode(self):
-        self.FUNDO = "white"
-        self.FUNDOB = "gray"
-        self.FUNDOL = "black"
+    def white_mode(self):
+        self.FUNDO.configure("white")
+        self.FUNDOB.configure("gray")
+        self.FUNDOL.configure("black")
 
-    def bl_mode(self):
-        self.FUNDO = "#242424"
-        self.FUNDOB = "#3B3B3B"
-        self.FUNDOL = "white"
+    def black_mode(self):
+        self.FUNDO.configure("#242424")
+        self.FUNDOB.configure("#3B3B3B")
+        self.FUNDOL.configure("white")
 
 Application()
