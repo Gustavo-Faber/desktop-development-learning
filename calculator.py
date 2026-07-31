@@ -12,7 +12,6 @@ class Feats():
             self.scr_main.pack(fill="both", expand=True)
         else:
             self.error_login.place(relx=0.5, rely=0.8, anchor="center")
-
     def clique(self, text):
         self.operadores = ["+", "-", "x", "/"]
         self.textvisor = self.visor["text"]
@@ -31,7 +30,18 @@ class Feats():
             self.visor["text"] += text
         else:
             return
+    def conecta_bd(self):
+        self.conn = sqlite3.connect("banco.db")
+        self.cursor = self.conn.cursor(); print("Conectando ao banco de dados")
 
+    def monta_tabelas(self):
+        self.cursor.execute("""CREATE TABLE IF NOT EXISTS users (
+            id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+            user TEXT NOT NULL,
+            pass TEXT NOT NULL
+            )""")
+        self.conn.commit(); print("Banco de dados criado")
+        
 
 class Application(Feats):
     def __init__(self):
