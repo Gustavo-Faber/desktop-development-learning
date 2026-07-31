@@ -52,11 +52,7 @@ class Feats():
         """)
         self.conn.commit(); print("Banco de dados criado")
         self.desconecta_bd()
-    def switch_mode(self):
-        if self.mode == self.white():
-            self.mode = self.black_mode()
-        else:
-            self.mode = self.white_mode()
+    # def switch_mode(self):
 
 class Application(Feats):
     def __init__(self):
@@ -153,18 +149,18 @@ class Application(Feats):
         self.delall = Button(self.scr_main, text="AC", bg=self.FUNDOB, fg=self.FUNDOL, font=("Arial", 15), command=lambda: self.clique("AC"))
         self.delall.place(relx= 0.50, rely= 0.6, relwidth= 0.25, relheight= 0.1)
 
-        self.modo = Button(self.window, text="🌙", bg=self.FUNDOB, command=self.switch_mode)
+        self.modo = Button(self.window, text="🌙", bg=self.FUNDOB)
         self.modo.place(relx=0, rely=0, relwidth=0.25, relheight=0.1)
 
 
     def white_mode(self):
-        self.FUNDO.configure("white")
-        self.FUNDOB.configure("gray")
-        self.FUNDOL.configure("black")
+        self.FUNDO = "white"
+        self.FUNDOB = "gray"
+        self.FUNDOL = "black"
 
     def black_mode(self):
-        self.FUNDO.configure("#242424")
-        self.FUNDOB.configure("#3B3B3B")
-        self.FUNDOL.configure("white")
+        self.FUNDO = "#242424"
+        self.FUNDOB = "#3B3B3B"
+        self.FUNDOL = "white"
 
 Application()
