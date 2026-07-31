@@ -59,7 +59,7 @@ class Application(Feats):
         self.window.title("Calculator")
         self.window.geometry("350x550")
         self.window.minsize(width=350, height=550)
-        self.wh_mode()
+        self.modo = self.bl_mode()
         self.window.configure(bg=self.FUNDO)
         self.monta_tabelas()
         self.screen_login()
@@ -148,7 +148,8 @@ class Application(Feats):
         self.delall = Button(self.scr_main, text="AC", bg=self.FUNDOB, fg=self.FUNDOL, font=("Arial", 15), command=lambda: self.clique("AC"))
         self.delall.place(relx= 0.50, rely= 0.6, relwidth= 0.25, relheight= 0.1)
 
-        self.modo = Button(self.scr_main, text="🌙", bg=self.FUNDOB)
+        self.modo = Button(self.window, text="🌙", bg=self.FUNDOB)
+        self.modo.place(relx=0, rely=0, relwidth=0.25, relheight=0.1)
 
 
     def wh_mode(self):
@@ -159,5 +160,6 @@ class Application(Feats):
     def bl_mode(self):
         self.FUNDO = "#242424"
         self.FUNDOB = "#3B3B3B"
+        self.FUNDOL = "white"
 
 Application()
