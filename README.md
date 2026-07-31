@@ -1,6 +1,6 @@
 # 🖥️ Desktop Development Learning
 
-Repositório de estudos de desenvolvimento desktop com Python e Tkinter.
+Repositório de estudos de desenvolvimento desktop com Python, Tkinter e banco de dados.
 
 ## 📁 Projetos
 
@@ -8,7 +8,7 @@ Repositório de estudos de desenvolvimento desktop com Python e Tkinter.
 Calculadora desktop com tela de login funcional.
 
 **Funcionalidades:**
-- Tela de login com autenticação de usuário e senha
+- Tela de login com integração a banco de dados
 - Recursos de acessibilidade
 - Calculadora com operações básicas
 
