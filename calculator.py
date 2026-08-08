@@ -149,6 +149,9 @@ class Application(Feats):
         self.delall = Button(self.scr_main, text="AC", bg=self.FUNDOB, fg=self.FUNDOL, font=("Arial", 15), command=lambda: self.clique("AC"))
         self.delall.place(relx= 0.50, rely= 0.6, relwidth= 0.25, relheight= 0.1)
 
+        self.point = Button(self.scr_main, text=".", bg=self.FUNDOB, fg=self.FUNDOL, font=("Arial", 15), command=lambda: self.clique("."))
+        self.point.place(relx= 0, rely= 0.6, relwidth= 0.25, relheight= 0.1)
+
         self.modo = Button(self.window, text="🌙", bg=self.FUNDOB)
         self.modo.place(relx=0, rely=0, relwidth=0.25, relheight=0.1)
 
