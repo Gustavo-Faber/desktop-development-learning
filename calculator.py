@@ -52,7 +52,39 @@ class Feats():
         """)
         self.conn.commit(); print("Banco de dados criado")
         self.desconecta_bd()
-    # def switch_mode(self):
+    def switch_mode(self):
+        if self.w_mode:
+            self.black_mode()
+            self.modo.configure(text="☀️")
+            self.w_mode = False
+        else:
+            self.white_mode()
+            self.modo.configure(text="🌙")
+            self.w_mode = True
+        self.aplicar_tema()
+
+    def aplicar_tema(self):
+        self.window.configure(bg=self.FUNDO)
+        self.scr_main.configure(bg=self.FUNDO)
+        self.scr_login.configure(bg=self.FUNDO)
+        self.visor.configure(bg=self.FUNDOB, fg=self.FUNDOL)
+        self.lb_login.configure(bg=self.FUNDO, fg=self.FUNDOL)
+        self.lb_user.configure(bg=self.FUNDO, fg=self.FUNDOL)
+        self.lb_password.configure(bg=self.FUNDO, fg=self.FUNDOL)
+        self.et_user.configure(bg=self.FUNDOB, fg=self.FUNDOL)
+        self.et_password.configure(bg=self.FUNDOB, fg=self.FUNDOL)
+        self.error_login.configure(bg=self.FUNDO)
+
+        botoes = [self.seven, self.eight, self.nine,
+              self.four, self.five, self.six,
+              self.one, self.two, self.three,
+              self.zero, self.soma, self.subtracao,
+              self.produto, self.divisao, self.resolver,
+              self.delete, self.delall, self.parl,
+              self.parr, self.point, self.modo]
+    
+        for bt in botoes:
+            bt.configure(bg=self.FUNDOB, fg=self.FUNDOL)
 
 class Application(Feats):
     def __init__(self):
@@ -60,8 +92,8 @@ class Application(Feats):
         self.window.title("Calculator")
         self.window.geometry("350x550")
         self.window.minsize(width=350, height=550)
-        self.mode = self.white_mode()
-        self.window.configure(bg=self.FUNDO)
+        self.white_mode()
+        self.w_mode = True
         self.monta_tabelas()
         self.screen_login()
         self.screen_main()
@@ -90,7 +122,7 @@ class Application(Feats):
         self.bt_login = Button(self.scr_login, text="LOGIN", bg="blue", font=("arial", 15), fg=self.FUNDOL, command=self.feat_btlogin)
         self.bt_login.place(relx=0.5, rely=0.7, relwidth=0.5, relheight=0.07, anchor="center")
 
-        self.error_login = Label(self.scr_login, bg=self.FUNDO, text="Senha e/ou usuário incorretos!.", fg="red", font=("arial", 10))
+        self.error_login = Label(self.scr_login, bg=self.FUNDO, text="Incorrect password and/or username!", fg="red", font=("arial", 10))
 
     def screen_main(self):
         self.scr_main = Frame(self.window, bg=self.FUNDO)
@@ -158,7 +190,7 @@ class Application(Feats):
         self.point = Button(self.scr_main, text=".", bg=self.FUNDOB, fg=self.FUNDOL, font=("Arial", 15), command=lambda: self.clique("."))
         self.point.place(relx= 0, rely= 0.6, relwidth= 0.25, relheight= 0.1)
 
-        self.modo = Button(self.window, text="🌙", bg=self.FUNDOB)
+        self.modo = Button(self.window, text="🌙", bg=self.FUNDOB, command=self.switch_mode)
         self.modo.place(relx=0, rely=0, relwidth=0.25, relheight=0.1)
 
 
