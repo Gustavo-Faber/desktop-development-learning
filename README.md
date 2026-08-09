@@ -8,11 +8,11 @@ Repositório de estudos de desenvolvimento desktop com Python, Tkinter e banco d
 Calculadora desktop com tela de login funcional.
 
 **Funcionalidades:**
-- Tela de login com integração a banco de dados (SQLite3 puro)
+- Tela de login com integração a banco de dados (SQL puro)
 - Recursos de acessibilidade
 - Calculadora com operações básicas
 
-**Tecnologias:** Python, Tkinter, SQLite3
+**Tecnologias:** Python, Tkinter, SQLite
 
 ---
 
