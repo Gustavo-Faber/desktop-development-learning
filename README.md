@@ -1,14 +1,14 @@
-# 🖥️ Desktop Development Learning
+# 🖥️ Desenvolvimento Desktop - Estudos
 
 Repositório de estudos de desenvolvimento desktop com Python, Tkinter e banco de dados.
 
 ## 📁 Projetos
 
-### 🔐 Calculator
+### 🔐 Calculadora
 Calculadora desktop com tela de login funcional.
 
 **Funcionalidades:**
-- Tela de login com integração a banco de dados
+- Tela de login com integração a banco de dados (SQLite3 puro)
 - Recursos de acessibilidade
 - Calculadora com operações básicas
 
